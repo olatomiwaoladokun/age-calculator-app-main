@@ -1,0 +1,74 @@
+/* Backgroud settings */
+*{
+    background-color:hsl(0, 0%, 94%) ;
+    /* font-family: "Poppins"; */
+}
+
+/* attribution settings */
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    margin:0 auto;
+    position: relative;
+    top: 19rem;
+    
+  }
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+/* Main interface settings */
+/* essentials */
+.interface{
+    /* background-color: hsl(0, 0%, 100%); */
+    background-color: red; 
+    margin: 0 auto;
+    margin-top: 120px;
+    width: 30rem;
+    height: 26rem;
+}
+
+/* looks */
+.interface{
+    border-radius: 3%;
+    border-bottom-right-radius: 25%;
+    padding:2%;
+}
+
+/* interface settings: children */
+/* forms */
+.forms{
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+}
+
+/* Form's Children: Labels */
+.labels{
+    text-decoration: none;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 5px 5px;
+    text-transform: uppercase;
+    font-size: 10px;
+    background-color: hsl(0, 0%, 100%);
+}
+.labels li {
+    color:hsl(0, 0%, 8%);
+
+}
+
+.inputs input{
+   width: 5rem; 
+   height: 2rem;
+   border-radius: 5%;
+   margin: 0 25px;
+   border:hsl(0, 1%, 44%) 0.5px solid;
+   color: hsl(0, 1%, 44%);
+   background-color: hsl(0, 0%, 100%);
+
+}
+
+.interface{
+    background-color: hsl(0, 0%, 100%);
+}
