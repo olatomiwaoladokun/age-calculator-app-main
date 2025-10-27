@@ -1,0 +1,139 @@
+body{
+    background: hsl(0, 0%, 94%);
+}
+
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    line-height: 1.5em;
+}
+
+.clr{
+    clear: both;
+}
+
+li{
+    list-style: none;
+}
+
+
+
+
+/* Styling of the main section */
+.container{
+    /* background: hsl(0, 100%, 100%); */
+    /* background: red;     */
+    margin: 120px auto;
+    /* margin-top: 120px; */
+    padding:2%;
+    border-radius: 3%;
+    border-bottom-right-radius: 25%;
+    width: 30rem;
+    height: 26rem;
+}
+
+/* Styling entries to give it a padding */
+
+.entry-label, .entry-input {
+    color: hsl(0, 1%, 44%);
+}
+
+
+.entry-label{
+    display: block;
+    font-size: 12px;
+    font-weight: 400i;
+}
+
+.entry-input{
+
+    border: 1px hsl(0, 1%, 44%) solid;
+    border-radius: 5px; 
+    width: 90px;
+    height: 30px;
+    font-weight: 700;
+    font-size: 32px ;
+    padding: 12px;
+}
+/* Active states stylings */
+.entry-input:active,  .entry-input:hover{
+    border: 1px hsl(259, 100%, 65%) solid;
+}
+/* Float each info-container */
+.info-container{
+    float: left;
+    margin: 12px;
+}
+
+
+
+/* Adding bottom border to the date required form */
+.date-required{
+    margin-bottom: 50px;
+    border-bottom: 1px hsl(0, 1%, 44%) solid ;
+    position: relative;
+    padding-bottom: 3.5%;
+    
+}
+
+/* Design for function-btn */
+#function-btn{
+    position: absolute;
+    bottom: -35px;
+    right: 0px;
+    height: 60px;
+    background: hsl(259, 100%, 65%);
+    background-repeat: no-repeat;
+    object-fit: cover;
+    height: 40px ;
+    padding: 15px;
+    border-radius: 50%;
+    align-content: center;
+}
+
+#function-btn:active, #function-btn:hover{
+    background: hsl(0, 0%, 0%);
+
+}
+
+
+
+/* Styling the output section */
+.output-data{
+    color:  hsl(259, 100%, 65%);
+    margin: 0;
+    float: left;
+    width: 20%;
+    height: 20px;
+    box-sizing: border-box;
+    display: inline;
+    text-align: center;
+    letter-spacing: 12px;
+}
+
+.output-label{
+    float: right;
+    width: 80%;
+    box-sizing: border-box;
+    margin: 0;
+    display: inline;
+}
+
+/* Styling the container of every unit output i.e year, month, day */
+.unit-output-container{
+    font-size: 50px;
+}
+/* The error class for invalid dates and unfilled entries */
+.error{
+    color: hsl(0, 100%, 67%);
+    font-size: 12px;
+}
+
+/* Attribution styling: */
+.attribution {
+font-size: 11px;
+text-align: center;
+}
+.attribution a {
+color: hsl(228, 45%, 44%);
+}

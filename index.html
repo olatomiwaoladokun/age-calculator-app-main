@@ -12,63 +12,84 @@
       href="./assets/images/favicon-32x32.png"
     />
 
-    <link rel="stylesheet" href="./styles.css" />
     <title>Frontend Mentor | Age calculator app</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Day
-  DD
+    <section class="container">
+      <div class="entries">
+        <form class="date-required">
+          <!-- Division of the day entry -->
+          <div class="day-class info-container">
+            <label for="day" class="entry-label">DAY</label>
+            <input
+              type="text"
+              id="day-entry"
+              placeholder="DD"
+              class="entry-input"
+            />
+            <div class="error"></div>
+          </div>
+          <!-- Division of the month entry -->
+          <div class="month-class info-container">
+            <label for="month" class="entry-label">MONTH</label>
+            <input
+              type="text"
+              id="month-entry"
+              placeholder="MM"
+              class="entry-input"
+            />
+            <div class="error"></div>
+          </div>
+          <!-- Division of the year entry -->
+          <div class="year-class info-container">
+            <label for="year" class="entry-label">YEAR</label>
+            <input
+              type="text"
+              id="year-entry"
+              placeholder="YYYY"
+              class="entry-input"
+            />
+            <div class="error"></div>
+          </div>
+          <div class="clr"></div>
 
-  Month
-  MM
-
-  Year
-  YYYY
-
-  -- years
-  -- months
-  -- days
-   -->
-
-    <div class="interface">
-      <!-- inputs -->
-      <div class="forms">
-        <div class="labels">
-          <li>Day</li>
-          <li>Month</li>
-          <li>Year</li>
-        </div>
-        <div class="inputs">
-          <input type="number" placeholder="DD" />
-          <input type="number" placeholder="MM" />
-          <input type="number" placeholder="YYYY" />
-        </div>
+          <input
+            type="image"
+            src="../assets/images/icon-arrow.svg"
+            value="Submit"
+            id="function-btn"
+          />
+        </form>
       </div>
-      <!-- results -->
-      <div class="results">
-        <p>-- years</p>
-        <p>-- months</p>
-        <p>-- days</p>
-      </div>
-    </div>
-
-    <script src="./scripts.js"></script>
+      <ul class="output">
+        <li class="unit-output-container">
+          <h3 id="year-output" class="output-data">--</h3>
+          <label class="output-label">years</label>
+          <div class="clr"></div>
+        </li>
+        <li class="unit-output-container">
+          <h3 id="month-output" class="output-data">--</h3>
+          <label class="output-label">months</label>
+          <div class="clr"></div>
+        </li>
+        <li class="unit-output-container">
+          <h3 id="day-output" class="output-data">--</h3>
+          <label class="output-label">days</label>
+          <div class="clr"></div>
+        </li>
+      </ul>
+    </section>
+    <!-- Day DD Month MM Year YYYY -- years -- months -- days -->
     <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
       >. Coded by <a href="#">Your Name Here</a>.
     </div>
+
+    <script src="main.js"></script>
   </body>
 </html>
