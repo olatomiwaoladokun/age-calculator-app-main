@@ -82,7 +82,18 @@ class Person{
             }else{
                 this.daysOld = this.daysOld + 31;
             }
-        }else if(this.month == 2){ //February checking
+        }if(this.monthsOld < 0 ){
+            this.yearsOld--;
+            this.monthsOld = 12 - this.monthsOld;
+
+        }
+        if(this.monthsOld > 12){
+            this.yearsOld = this.yearsOld + 1;
+            const difference = this.monthsOld % 12;
+            this.monthsOld = this.monthsOld - 12;
+ 
+        }
+        else if(this.month == 2){ //February checking
             console.log(this.year);
             const isLeapYear = Number.isInteger(this.year / 4);
             if (isLeapYear == true){
@@ -132,6 +143,7 @@ const giveDateBack = (e) =>{
     e.preventDefault();
     if ( monthEntry.value < 0 || monthEntry.value > 12){
         errordiv[1].textContent = "Must be a valid month";
+        return
     }if( monthEntry.value == 2  && isLeapYearBool === true && dayEntry.value > 29){//Checking for invalid leap year february dates
         errordiv[0].textContent = "Must be a valid date";
         entryLabel[0].style.color = "hsl(0, 100%, 67%)";
@@ -140,9 +152,16 @@ const giveDateBack = (e) =>{
             entryLabel[0].style.color = "hsl(0, 1%, 44%)";
             
         }, 3000);
+        return;
     }
     if( monthEntry.value == 2  && isLeapYearBool === false && dayEntry.value > 28){//Checking for invalid non-leap year february dates
         errordiv[0].textContent = "Must be a valid date";
+        setTimeout(() => {//Clear error message after three seconds
+            errordiv[0].textContent = "";
+            entryLabel[0].style.color = "hsl(0, 1%, 44%)";
+            
+        }, 3000);
+        return
     }if((monthEntry.value == 4 || monthEntry.value == 6 || monthEntry.value == 9 || monthEntry.value == 11) && dayEntry.value> 30){//Checking for abnormally large day numbers for months with 30 days
         entryLabel[0].style.color = "hsl(0, 100%, 67%)";
         errordiv[0].textContent = "Must be a valid date";
@@ -155,6 +174,12 @@ const giveDateBack = (e) =>{
     if((monthEntry.value != 4 || monthEntry.value != 6 || monthEntry.value != 9 || monthEntry.value != 11) && this.daysOld > 31){//Checking for abnormally large day numbers for months with 31 days
         entryLabel[0].style.color = "hsl(0, 100%, 67%)";
         errordiv[0].textContent = "Must be a valid date";
+        setTimeout(() => {
+            errordiv[2].textContent = "";
+            entryLabel[2].style.color = "hsl(0, 1%, 44%)";
+            
+        }, 3000);
+        return;
     }if (yearEntry.value > todayGlobal.getFullYear()){
         entryLabel[2].style.color = "hsl(0, 100%, 67%)";
         errordiv[2].textContent = "Must be in the past"; 
@@ -163,6 +188,7 @@ const giveDateBack = (e) =>{
             entryLabel[2].style.color = "hsl(0, 1%, 44%)";
             
         }, 3000);
+        return;
     }
     else{
     person1 = new Person();
