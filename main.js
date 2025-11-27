@@ -88,7 +88,7 @@ class Person{
 
         }
         if(this.monthsOld > 12){
-            this.yearsOld = this.yearsOld + 1;
+            this.yearsOld = this.yearsOld + ~~(this.monthsOld/12);
             const difference = this.monthsOld % 12;
             this.monthsOld = this.monthsOld - 12;
  
