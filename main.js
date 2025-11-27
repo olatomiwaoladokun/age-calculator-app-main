@@ -141,7 +141,7 @@ console.log
 const giveDateBack = (e) =>{
     const isLeapYearBool =  leapYearCheck(yearEntry.value);
     e.preventDefault();
-    if ( monthEntry.value < 0 || monthEntry.value > 12){
+    if ( monthEntry.value < 0 || monthEntry.value > 12 ){
         errordiv[1].textContent = "Must be a valid month";
         return
     }if( monthEntry.value == 2  && isLeapYearBool === true && dayEntry.value > 29){//Checking for invalid leap year february dates
@@ -162,7 +162,7 @@ const giveDateBack = (e) =>{
             
         }, 3000);
         return
-    }if((monthEntry.value == 4 || monthEntry.value == 6 || monthEntry.value == 9 || monthEntry.value == 11) && dayEntry.value> 30){//Checking for abnormally large day numbers for months with 30 days
+    }if((monthEntry.value == 4 || monthEntry.value == 6 || monthEntry.value == 9 || monthEntry.value == 11) && dayEntry.value> 30  ){//Checking for abnormally large day numbers for months with 30 days
         entryLabel[0].style.color = "hsl(0, 100%, 67%)";
         errordiv[0].textContent = "Must be a valid date";
         setTimeout(() => {
@@ -171,7 +171,7 @@ const giveDateBack = (e) =>{
             
         }, 3000);
     }
-    if((monthEntry.value != 4 || monthEntry.value != 6 || monthEntry.value != 9 || monthEntry.value != 11) && this.daysOld > 31){//Checking for abnormally large day numbers for months with 31 days
+    if((monthEntry.value != 4 || monthEntry.value != 6 || monthEntry.value != 9 || monthEntry.value != 11) && this.daysOld > 31 ){//Checking for abnormally large day numbers for months with 31 days
         entryLabel[0].style.color = "hsl(0, 100%, 67%)";
         errordiv[0].textContent = "Must be a valid date";
         setTimeout(() => {
@@ -206,6 +206,7 @@ const giveDateBack = (e) =>{
         const daysOld = person1.getDaysOld();
         const yearsOld = person1.getYearsOld();
         const monthsOld = person1.getMonthsOld();
+        console.log(typeof daysOld);
         yearOutput.textContent = yearsOld; 
         dayOutput.textContent = daysOld; 
         monthOutput.textContent = monthsOld;
