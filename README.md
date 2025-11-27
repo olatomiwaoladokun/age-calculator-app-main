@@ -37,7 +37,7 @@ Users should be able to:
 
 ### Screenshot
 
-![./assets/images/Screenshot.png]
+![Overview of app](./assets/images/Screenshot.png)
 
 ### Links
 
